@@ -1,6 +1,6 @@
 {
   "author": "Jason Salzman",
-  "name": "react-add-to-calendar",
+  "name": "react-add-to-calendar-with-afterclick",
   "description": "A simple and reusable add to calendar button component for React",
   "version": "0.1.5",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "url": "https://github.com/jasonsalzman/react-add-to-calendar/issues"
   },
   "main": "dist/react-add-to-calendar.min.js",
-  "style": "dist/react-add-to-calendar.min.css",
+  "style": "dist/react-add-to-calendar.d.ts",
   "files": [
     "*.md",
     "dist",
