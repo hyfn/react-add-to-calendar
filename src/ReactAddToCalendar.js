@@ -80,6 +80,7 @@ export default class ReactAddToCalendar extends React.Component {
       window.open(url, "_blank");
     }
 
+    this.props.afterItemClick && this.props.afterItemClick(this.props.clubreadyId);
     this.toggleCalendarDropdown();
   }
 
@@ -214,6 +215,8 @@ ReactAddToCalendar.propTypes = {
     endTime: PropTypes.string
   }).isRequired,
   listItems: PropTypes.arrayOf(PropTypes.object),
+  clubreadyId: PropTypes.string,
+  afterItemClick: PropTypes.func,
   rootClass: PropTypes.string
 };
 
@@ -242,5 +245,7 @@ ReactAddToCalendar.defaultProps = {
     { outlookcom: "Outlook.com" },
     { yahoo: "Yahoo" }
   ],
+  clubreadyId: null,
+  afterItemClick: null,
   rootClass: "react-add-to-calendar"
 };
