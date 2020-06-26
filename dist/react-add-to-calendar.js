@@ -586,6 +586,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return formattedDate.replace("+00:00", "Z");
 	    }
 	  }, {
+	    key: "outlookcomformatTime",
+	    value: function outlookcomformatTime(date) {
+	      var formattedDate = _moment2.default.utc(date).format("YYYY-MM-DDTHH:mm:ssZ");
+	      return formattedDate.replace("+00:00", "Z");
+	    }
+	  }, {
 	    key: "calculateDuration",
 	    value: function calculateDuration(startTime, endTime) {
 	      // snag parameters and format properly in UTC
@@ -632,8 +638,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        case "outlookcom":
 	          calendarUrl = "https://outlook.live.com/owa/?rru=addevent";
-	          calendarUrl += "&startdt=" + this.formatTime(event.startTime);
-	          calendarUrl += "&enddt=" + this.formatTime(event.endTime);
+	          calendarUrl += "&startdt=" + this.outlookcomformatTime(event.startTime);
+	          calendarUrl += "&enddt=" + this.outlookcomformatTime(event.endTime);
 	          calendarUrl += "&subject=" + encodeURIComponent(event.title);
 	          calendarUrl += "&location=" + encodeURIComponent(event.location);
 	          calendarUrl += "&body=" + encodeURIComponent(event.description);

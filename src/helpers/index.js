@@ -11,6 +11,11 @@ export default class helpers {
     return formattedDate.replace("+00:00", "Z");
   }
 
+  outlookcomformatTime(date) {
+    let formattedDate = moment.utc(date).format("YYYY-MM-DDTHH:mm:ssZ")
+    return formattedDate.replace("+00:00", "Z")
+  }
+
   calculateDuration(startTime, endTime) {
     // snag parameters and format properly in UTC
     let end = moment.utc(endTime).format("DD/MM/YYYY HH:mm:ss");
@@ -59,8 +64,8 @@ export default class helpers {
 
       case "outlookcom":
         calendarUrl = "https://outlook.live.com/owa/?rru=addevent";
-        calendarUrl += "&startdt=" + this.formatTime(event.startTime);
-        calendarUrl += "&enddt=" + this.formatTime(event.endTime);
+        calendarUrl += "&startdt=" + this.outlookcomformatTime(event.startTime);
+        calendarUrl += "&enddt=" + this.outlookcomformatTime(event.endTime);
         calendarUrl += "&subject=" + encodeURIComponent(event.title);
         calendarUrl += "&location=" + encodeURIComponent(event.location);
         calendarUrl += "&body=" + encodeURIComponent(event.description);

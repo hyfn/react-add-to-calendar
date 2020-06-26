@@ -1,6 +1,10 @@
 # React Add to Calendar Button with Afterclick
 
-### THIS IS A FORKED VERSION, PLEASE USE THE ORIGINAL ONE [HERE](https://jasonsalzman.github.io/react-add-to-calendar/)
+### THIS IS A FORKED VERSION SPECIFICALLY MODIFIED TO FIT OUT NEEDS, THE ORIGINAL ONE CAN BE FOUND HERE [HERE](https://jasonsalzman.github.io/react-add-to-calendar/)
+
+## Development
+
+Modify whatever needed in `/src/ReactAddToCalendar.js` and run npm install. Make sure the files in `/dist` are changed accordingly.
 
 [![npm version](https://badge.fury.io/js/react-add-to-calendar-with-afterclick.svg)](https://badge.fury.io/js/react-add-to-calendar-with-afterclick)
 
