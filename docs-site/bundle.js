@@ -19474,7 +19474,7 @@
 	          break;
 
 	        default:
-	          calendarUrl = ["BEGIN:VCALENDAR", "VERSION:2.0", "BEGIN:VEVENT", "URL:" + document.URL, "DTSTART:" + this.formatTime(event.startTime), "DTEND:" + this.formatTime(event.endTime), "SUMMARY:" + event.title, "DESCRIPTION:" + event.description, "LOCATION:" + event.location, "END:VEVENT", "END:VCALENDAR"].join("\n");
+	          calendarUrl = ["BEGIN:VCALENDAR", "PRODID:-//Club Pilates/EN", "VERSION:2.0", "BEGIN:VEVENT", "UID:" + (0, _moment2.default)().format("YYYYMMDDTHHmmss") + "Z" + "@members.clubpilates.com", "DTSTAMP:" + (0, _moment2.default)().format("YYYYMMDDTHHmmss") + "Z", "URL:" + document.URL, "DTSTART:" + this.formatTime(event.startTime), "DTEND:" + this.formatTime(event.endTime), "SUMMARY:" + event.title, "DESCRIPTION:" + event.description.replace(/(?:\r\n|\r|\n)/g, '\\n'), "LOCATION:" + event.location, "END:VEVENT", "END:VCALENDAR"].join("\n");
 
 	          if (!isCrappyIE && this.isMobile()) {
 	            calendarUrl = encodeURI("data:text/calendar;charset=utf8," + calendarUrl);

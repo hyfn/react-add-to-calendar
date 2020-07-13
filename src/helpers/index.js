@@ -77,13 +77,16 @@ export default class helpers {
       default:
         calendarUrl = [
           "BEGIN:VCALENDAR",
+          "PRODID:-//Club Pilates/EN",
           "VERSION:2.0",
           "BEGIN:VEVENT",
+          "UID:" + moment().format("YYYYMMDDTHHmmss") + "Z" + "@members.clubpilates.com",
+          "DTSTAMP:" + moment().format("YYYYMMDDTHHmmss") + "Z",
           "URL:" + document.URL,
           "DTSTART:" + this.formatTime(event.startTime),
           "DTEND:" + this.formatTime(event.endTime),
           "SUMMARY:" + event.title,
-          "DESCRIPTION:" + event.description,
+          "DESCRIPTION:" + event.description.replace(/(?:\r\n|\r|\n)/g, '\\n'),
           "LOCATION:" + event.location,
           "END:VEVENT",
           "END:VCALENDAR"
